@@ -145,33 +145,9 @@ with st.sidebar:
     # About link at the bottom of sidebar - making it more prominent
     st.sidebar.markdown("---")
     
-    # Create a more visible About link with custom styling
-    st.sidebar.markdown("""
-    <div style="background-color: #B8860B; padding: 10px; border-radius: 5px; margin-top: 20px; text-align: center;">
-        <a href="#" id="about-link" style="color: white; text-decoration: none; font-weight: bold; font-size: 16px;">About</a>
-    </div>
-    
-    <script>
-        document.getElementById('about-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            // Using Streamlit's event mechanism to trigger the button click
-            document.querySelector('[key="about_button"]').click();
-        });
-    </script>
-    """, unsafe_allow_html=True)
-    
-    # Hidden button that will be triggered by the custom link (using visibility:hidden to hide it)
-    st.sidebar.markdown("""
-    <style>
-    [data-testid="baseButton-secondary"][key="about_button"] {
-        visibility: hidden;
-        height: 0px;
-        position: absolute;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-    
-    st.sidebar.button("About", on_click=toggle_about, key="about_button", help="Learn more about this project", type="secondary")
+  # Simple About button
+st.sidebar.button("About", on_click=toggle_about, key="about_button", help="Learn more about this project", type="primary", use_container_width=True)
+
 
 # Main content
 st.markdown("<h1 class='main-header'>Probability of Winning an Award at Cannes Advertising Festival</h1>", unsafe_allow_html=True)
