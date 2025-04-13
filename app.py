@@ -181,39 +181,24 @@ st.markdown("<p class='subheader'>Calculate your chances of winning based on his
 if st.session_state.show_about:
     st.header("About This Project")
     
-    st.markdown("""
-    <div class="info-box">
-        <h3>Data & Methodology</h3>
-        <p>This calculator analyzes <span class="highlight">71 years</span> of Cannes Lions Festival history, processing data from <span class="highlight">over 250,000 submissions</span> across <span class="highlight">30 award categories</span> and <span class="highlight">more than 100 countries</span>. The algorithm considers historical win rates, category competitiveness, country performance, agency track records, and other key factors to estimate your probability of winning.</p>
-        
-        <div class="stat-container">
-            <div class="stat-box">
-                <div class="stat-number">71</div>
-                <div class="stat-label">Years of Festival Data</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">250,000+</div>
-                <div class="stat-label">Submissions Analyzed</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">30</div>
-                <div class="stat-label">Award Categories</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Countries</div>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    st.subheader("Data & Methodology")
+    st.write("This calculator analyzes 71 years of Cannes Lions Festival history, processing data from over 250,000 submissions across 30 award categories and more than 100 countries. The algorithm considers historical win rates, category competitiveness, country performance, agency track records, and other key factors to estimate your probability of winning.")
     
-    st.markdown("""
-    <div class="info-box">
-        <h3>Created with Manus</h3>
-        <p>This project was created using Manus, an advanced AI agent with capabilities in complex data analysis, web development, and creative problem-solving. Manus analyzed historical Cannes Lions data, identified patterns in winning submissions, and developed both the prediction algorithm and interactive web interface.</p>
-        <p>Project by <span class="highlight">@Serhat Gurcu</span></p>
-    </div>
-    """, unsafe_allow_html=True)
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.metric("Years of Data", "71")
+    with col2:
+        st.metric("Submissions", "250,000+")
+    with col3:
+        st.metric("Categories", "30")
+    with col4:
+        st.metric("Countries", "100+")
+    
+    st.subheader("Created with Manus")
+    st.write("This project was created using Manus, an advanced AI agent with capabilities in complex data analysis, web development, and creative problem-solving. Manus analyzed historical Cannes Lions data, identified patterns in winning submissions, and developed both the prediction algorithm and interactive web interface.")
+    
+    st.markdown("[Project by @Serhat Gurcu](https://www.linkedin.com/in/serhatgurcu/) ", unsafe_allow_html=True)
+
     
     st.markdown("""
     <div class="info-box">
